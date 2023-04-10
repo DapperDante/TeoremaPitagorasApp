@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeoremaPitagorasApp.View.Hipotenusa"
+             BackgroundColor="#0072D0"
+             NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="90,*">
+        <StackLayout Orientation="Horizontal"
+                     Margin="15">
+            <Image Source="Flecha"
+                   HeightRequest="40">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavigationBackcommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="INGRESE DATOS" 
+                   FontSize="30"
+                   Margin="50,0,0,0"
+                   VerticalOptions="Center"/>
+        </StackLayout>
+        <RelativeLayout Grid.Row="1">
+            <Image Source="Fondo.png"
+                   Margin="10"/>
+        </RelativeLayout>
+        <StackLayout Grid.Row="1"
+                     Margin="20"
+                     Spacing="30">
+            <Frame BackgroundColor="#0F3A5C"
+                   WidthRequest="10">
+                <StackLayout>
+                    <Label Text="HIPOTENUSA" 
+                           HorizontalOptions="Center"
+                           FontSize="20"/>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="#0F3A5C"
+                   Grid.Row="1">
+                <Entry Placeholder="CATETO A" />
+            </Frame>
+            <Frame BackgroundColor="#0F3A5C"
+                   Grid.Row="2">
+                <Entry Placeholder="CATETO B" />
+            </Frame>
+            <ImageButton Source="Huella.png"
+                         HeightRequest="200"
+                         Margin="0,50,0,0"
+                         x:Name="ButtonImage"
+                         Pressed="ButtonImage_Pressed"
+                         Released="ButtonImage_Released"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
